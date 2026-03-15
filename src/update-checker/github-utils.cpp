@@ -8,7 +8,7 @@
 #include "plugin-support.h"
 
 static const std::string GITHUB_LATEST_RELEASE_URL =
-	"https://api.github.com/repos/occ-ai/obs-backgroundremoval/releases/latest";
+	"https://api.github.com/repos/wxyahyj/obs-lingleipidkongzhi/releases/latest";
 
 void github_utils_get_release_information(std::function<void(github_utils_release_information)> callback)
 {
@@ -19,7 +19,7 @@ void github_utils_get_release_information(std::function<void(github_utils_releas
 		obs_data_t *data = obs_data_create_from_json(responseBody.c_str());
 		if (!data) {
 			obs_log(LOG_INFO, "Failed to parse latest release info");
-			callback({OBS_BGREMOVAL_GITHUB_UTILS_ERROR, "", ""});
+			callback({OBS_YOLOPID_GITHUB_UTILS_ERROR, "", ""});
 			return;
 		}
 
@@ -33,6 +33,6 @@ void github_utils_get_release_information(std::function<void(github_utils_releas
 			version = version.substr(1);
 		}
 
-		callback({OBS_BGREMOVAL_GITHUB_UTILS_SUCCESS, body, version});
+		callback({OBS_YOLOPID_GITHUB_UTILS_SUCCESS, body, version});
 	});
 }

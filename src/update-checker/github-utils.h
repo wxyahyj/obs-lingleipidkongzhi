@@ -4,8 +4,8 @@
 #include <string>
 
 enum {
-	OBS_BGREMOVAL_GITHUB_UTILS_SUCCESS = 0,
-	OBS_BGREMOVAL_GITHUB_UTILS_ERROR = -1,
+	OBS_YOLOPID_GITHUB_UTILS_SUCCESS = 0,
+	OBS_YOLOPID_GITHUB_UTILS_ERROR = -1,
 };
 
 struct github_utils_release_information {

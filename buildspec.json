@@ -33,11 +33,11 @@
   },
   "platformConfig": {
     "macos": {
-      "bundleId": "com.royshilkrot.obs-backgroundremoval"
+      "bundleId": "com.royshilkrot.yolopid"
     }
   },
-  "name": "obs-backgroundremoval",
-  "displayName": "OBS Background Removal",
+  "name": "yolopid",
+  "displayName": "YOLO PID Control",
   "version": "1.3.6",
   "author": "Roy Shilkrot",
   "website": "https://royshil.github.io/obs-backgroundremoval/",
