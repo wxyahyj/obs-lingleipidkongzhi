@@ -28,39 +28,39 @@ int getConfig(config_t **config)
 	if (ret != CONFIG_SUCCESS) {
 		obs_log(LOG_INFO, "Failed to open config file %s", config_file_path);
 		bfree(config_file_path);
-		return OBS_BGREMOVAL_CONFIG_FAIL;
+		return OBS_YOLOPID_CONFIG_FAIL;
 	}
 
 	bfree(config_file_path);
-	return OBS_BGREMOVAL_CONFIG_SUCCESS;
+	return OBS_YOLOPID_CONFIG_SUCCESS;
 }
 
 int getFlagFromConfig(const char *name, bool *returnValue, bool defaultValue)
 {
 	// Get the config file
 	config_t *config;
-	if (getConfig(&config) != OBS_BGREMOVAL_CONFIG_SUCCESS) {
+	if (getConfig(&config) != OBS_YOLOPID_CONFIG_SUCCESS) {
 		*returnValue = defaultValue;
-		return OBS_BGREMOVAL_CONFIG_FAIL;
+		return OBS_YOLOPID_CONFIG_FAIL;
 	}
 
 	*returnValue = config_get_bool(config, "config", name);
 	config_close(config);
 
-	return OBS_BGREMOVAL_CONFIG_SUCCESS;
+	return OBS_YOLOPID_CONFIG_SUCCESS;
 }
 
 int setFlagInConfig(const char *name, const bool value)
 {
 	// Get the config file
 	config_t *config;
-	if (getConfig(&config) != OBS_BGREMOVAL_CONFIG_SUCCESS) {
-		return OBS_BGREMOVAL_CONFIG_FAIL;
+	if (getConfig(&config) != OBS_YOLOPID_CONFIG_SUCCESS) {
+		return OBS_YOLOPID_CONFIG_FAIL;
 	}
 
 	config_set_bool(config, "config", name, value);
 	config_save(config);
 	config_close(config);
 
-	return OBS_BGREMOVAL_CONFIG_SUCCESS;
+	return OBS_YOLOPID_CONFIG_SUCCESS;
 }

@@ -17,7 +17,7 @@ static std::mutex latestVersionMutex;
 void check_update(void)
 {
 	bool shouldCheckForUpdates = false;
-	if (getFlagFromConfig("check_for_updates", &shouldCheckForUpdates, true) != OBS_BGREMOVAL_CONFIG_SUCCESS) {
+	if (getFlagFromConfig("check_for_updates", &shouldCheckForUpdates, true) != OBS_YOLOPID_CONFIG_SUCCESS) {
 		// Failed to get the config value, assume it's enabled
 		shouldCheckForUpdates = true;
 		// store the default value
@@ -30,7 +30,7 @@ void check_update(void)
 	}
 
 	const auto callback = [](github_utils_release_information info) {
-		if (info.responseCode != OBS_BGREMOVAL_GITHUB_UTILS_SUCCESS) {
+		if (info.responseCode != OBS_YOLOPID_GITHUB_UTILS_SUCCESS) {
 			obs_log(LOG_INFO, "failed to get latest release information");
 			return;
 		}
