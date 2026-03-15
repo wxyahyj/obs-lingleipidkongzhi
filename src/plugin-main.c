@@ -28,7 +28,7 @@ OBS_MODULE_USE_DEFAULT_LOCALE(PLUGIN_NAME, "en-US")
 
 MODULE_EXPORT const char *obs_module_description(void)
 {
-	return obs_module_text("YOLODetectorPlugin");
+	return "yolopid";
 }
 
 extern struct obs_source_info yolo_detector_filter_info;

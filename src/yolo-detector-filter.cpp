@@ -303,7 +303,7 @@ static void renderFloatingWindow(yolo_detector_filter *filter);
 const char *yolo_detector_filter_getname(void *unused)
 {
 	UNUSED_PARAMETER(unused);
-	return obs_module_text("YOLODetector");
+	return "yolopid";
 }
 
 static bool onPageChanged(obs_properties_t *props, obs_property_t *property, obs_data_t *settings);
